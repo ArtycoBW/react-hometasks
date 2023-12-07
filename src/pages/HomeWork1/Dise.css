@@ -1,0 +1,114 @@
+.roll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 120px;
+}
+
+.roll_btn {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.roll_btn:hover {
+  background-color: #ff6347;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.cube {
+  margin-top: 100px;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.side {
+  border: 7px solid var(--primary-color);
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  font-size: 50px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 1s;
+}
+
+.side-1 {
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+.side-2 {
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+.side-3 {
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+.side-4 {
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+.side-5 {
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+.side-6 {
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.side::before {
+  content: "";
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+  background: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
+.side-2::before {
+  background: transparent;
+  box-shadow: var(--primary-color) -70px -70px 0px 0px,
+    var(--primary-color) 70px 70px 0px 0px;
+}
+
+.side-3::before {
+  box-shadow: var(--primary-color) -70px 70px 0px 0px,
+    var(--primary-color) 70px -70px 0px 0px;
+}
+
+.side-4::before {
+  background: transparent;
+  box-shadow: var(--primary-color) -70px 70px 0px 0px,
+    var(--primary-color) -70px -70px 0px 0px,
+    var(--primary-color) 70px 70px 0px 0px,
+    var(--primary-color) 70px -70px 0px 0px;
+}
+
+.side-5::before {
+  box-shadow: var(--primary-color) -70px -70px 0px 0px,
+    var(--primary-color) -70px 70px 0px 0px,
+    var(--primary-color) 70px -70px 0px 0px,
+    var(--primary-color) 70px 70px 0px 0px;
+}
+
+.side-6::before {
+  background: transparent;
+  box-shadow: var(--primary-color) -70px -70px 0px 0px,
+    var(--primary-color) -70px 0px 0px 0px,
+    var(--primary-color) -70px 70px 0px 0px,
+    var(--primary-color) 70px -70px 0px 0px,
+    var(--primary-color) 70px 0px 0px 0px,
+    var(--primary-color) 70px 70px 0px 0px;
+}
